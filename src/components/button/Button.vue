@@ -11,7 +11,7 @@ interface ButtonProps {
   size?: ButtonSize
   round?: boolean
   plain?: boolean
-  nativeType?: ButtonNativeType
+  buttonType?: ButtonNativeType
   circle?: boolean
   icon?: string
   loading?: boolean
@@ -58,9 +58,10 @@ const classes = useClasses({
   <button
     class="el-button"
     :class="classes"
-    :type="nativeType"
+    :type="buttonType"
     :disabled="disabled || loading"
   >
+
     <i v-if="loading" class="el-icon-loading" data-testid="loadingIcon" />
     <i v-else-if="icon" :class="icon" data-testid="icon" />
     <span v-if="$slots.default">
